@@ -1,4 +1,5 @@
-# Welcome to your Expo app 👋
+This project is about blogs and threading of your blog
+today 30th june ,i have just started it and started to  plan the ux/ui . In this project for 5 to 7 days i will work on ux and ui part.
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
