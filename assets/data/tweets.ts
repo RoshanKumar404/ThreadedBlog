@@ -12,6 +12,7 @@ const tweets = [
     content: 'mera agla movie theater faad dega',
     
     numberOfRetweets: 11,
+    share:110,
     image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',
     
@@ -31,6 +32,7 @@ const tweets = [
     content:
       'My favourate animal is Dear',
     numberOfComments: 20,
+    share:13,
     numberOfRetweets: 500,
     numberOfLikes: 205,
     impressions: 5009,
@@ -55,6 +57,7 @@ const tweets = [
     numberOfRetweets: 200,
     numberOfLikes: 10,
     impressions: 100,
+    share:10,
   },
   {
     id: 't3',
@@ -72,6 +75,7 @@ const tweets = [
     numberOfRetweets: 100,
     numberOfLikes: 500,
     impressions: 100,
+    share:110,
     image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',
     
@@ -87,20 +91,22 @@ const tweets = [
     },
     createdAt: '2024-08-27T12:00:00.000Z',
     content:
-      "My Favourite leone <3",
+      "My Favourite leone 💓",
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReUMkXF4kGrqHjlNSWNpXml7jZ5mPLcTiqxg&s',
     numberOfComments: 123,
     numberOfRetweets: 11,
     numberOfLikes: 10,
+    share:160,
+
     impressions: 50090,
   },
   {
     id: 't5',
     user: {
       id: 'u5',
-      username: 'Roshan ki Favourite',
-      name: 'leone',
+      username: 'Roshan ki Favourite 🌕',
+      name: 'Ĩĕōńĕ',
       image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReUMkXF4kGrqHjlNSWNpXml7jZ5mPLcTiqxg&s',
     },
@@ -111,6 +117,7 @@ const tweets = [
     numberOfRetweets: 191,
     numberOfLikes: 9999,
     impressions: 5002,
+    share:100,
     image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',
     
@@ -130,6 +137,7 @@ const tweets = [
     numberOfRetweets: 1,
     numberOfLikes: 92,
     impressions: 509,
+    share:310,
     image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',
     
@@ -149,6 +157,7 @@ const tweets = [
     numberOfComments: 42,
     numberOfRetweets: 110,
     numberOfLikes: 9,
+    share:210,
     impressions: 500,
     image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',

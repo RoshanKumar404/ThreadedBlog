@@ -1,38 +1,32 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import tweets from '@/assets/data/tweets';
-import { FontAwesome } from '@expo/vector-icons';
+import { Image, StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+
 import { Entypo } from '@expo/vector-icons';
-import { EvilIcons } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
+import IconButtons from '@/components/IconButton';
 
 export default function Twitter(props) {
-    const tweet = props.tweet;
+    const tweet = props.tweet
     return (
         <View style={styles.Container}>
-            <Image source={{ uri: tweet.user.image }} style={styles.Imagecontainer} />
+            <Image src={tweet.user.image} style={styles.Imagecontainer} />
             <View style={styles.datacontainer}>
-                <View style={{ flexDirection: "row" }}>
+                <View style={{flexDirection:"row",}}>
                     <Text style={{ fontWeight: "bold", color: "black" }}>{tweet.user.name}</Text>
-                    <Text style={{ color: "grey" }}>  {tweet.user.username}   .2h</Text>
+                    <Text style={{  color: "grey" }}>  {  tweet.user.username}   .2h</Text>
                     <Entypo 
-                        name="dots-three-horizontal"
-                        size={18} 
-                        color="grey" 
-                        style={{ marginLeft: "auto" }} 
-                    />
+                    name="dots-three-horizontal"
+                     size={18} 
+                     color="grey" 
+                     style={{marginLeft:"auto"}} />
                 </View>
                 <Text>{tweet.content}</Text>
-                {tweet.image && <Image source={{ uri: tweet.image }} style={styles.contentImage} />}
+                {tweet.image && <Image src={tweet.image} style={styles.contentIage} />}
                 <View style={styles.containerFooter}>
-                    <View style={styles.iconWithText}>
-                        <AntDesign name="retweet" size={24} color="black" />
-                        <Text style={styles.iconText}>{tweet.impressions}</Text>
-                    </View>
-                    <FontAwesome name="comment-o" size={24} color="black" />
-                    <Ionicons name="stats-chart-outline" size={24} color="black" />
-                    <Entypo name="heart-outlined" size={24} color="black" />
+                <IconButtons icon='retweet' text={tweet.numberOfRetweets}/>
+               <IconButtons icon='comment' text={tweet.numberOfComments}/>
+               <IconButtons icon='heart' text={tweet.numberOfLikes||0}/>
+               <IconButtons  icon="chart" text={tweet.impressions ||0}/>
+               <IconButtons icon="share-google" text={tweet.share ||0}/>
                 </View>
             </View>
         </View>
@@ -41,6 +35,9 @@ export default function Twitter(props) {
 
 const styles = StyleSheet.create({
     Container: {
+        // flex: 1,
+        // alignItems: 'center',
+        // justifyContent:"center",
         flexDirection: "row",
         padding: 20,
         paddingLeft: 10,
@@ -49,30 +46,22 @@ const styles = StyleSheet.create({
     },
     datacontainer: {
         flex: 1,
+        //alignItems: 'flex-start',
         justifyContent: "center",
         marginLeft: 10
     },
     Imagecontainer: {
-        width: 80, 
-        height: 80, 
-        borderRadius: 45
+        width: 80, height: 80, borderRadius: 45
     },
-    contentImage: {
+    contentIage: {
         width: "100%",
-        aspectRatio: 16 / 9,
+        aspectRatio: 16 /12,
         margin: 10,
         borderRadius: 15,
+
     },
-    containerFooter: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center"
-    },
-    iconWithText: {
-        flexDirection: "row",
-        alignItems: "center"
-    },
-    iconText: {
-        marginLeft: 5
+    containerFooter:{
+        flexDirection:"row",
+        justifyContent:"space-between"
     }
-});
+})
