@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform,SafeAreaView } from 'react-native';
+import { Image, StyleSheet,FlatList, Platform,SafeAreaView } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -6,19 +6,18 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { View } from 'react-native-reanimated/lib/typescript/Animated';
 import tweets from '@/assets/data/tweets';
+import Twitter from '../trial';
 export default function HomeScreen() {
 
   const tweet= tweets[1]
   return (
     
     <ThemedView style={styles.Container}>
-      <Image src={tweet.user.image} style={styles.Imagecontainer}/>
-      <ThemedView style={styles.datacontainer}>
-       <ThemedText  style={{fontWeight:"bold"}}>
-        {tweet.user.username}
-       </ThemedText>
-       <ThemedText>{tweet.content}</ThemedText>
-       </ThemedView>
+     <FlatList 
+        data={tweets}
+        renderItem={({item}) => <Twitter tweet={item} />}
+        keyExtractor={(item) => item.id.toString()}
+      />
     </ThemedView>
     
   );

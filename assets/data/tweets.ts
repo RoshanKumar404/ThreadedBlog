@@ -12,7 +12,11 @@ const tweets = [
     content: 'mera agla movie theater faad dega',
     
     numberOfRetweets: 11,
+    image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',
+    
     numberOfLikes: 10,
+    impressions: 500900,
   },
   {
     id: 't1',
@@ -30,6 +34,9 @@ const tweets = [
     numberOfRetweets: 500,
     numberOfLikes: 205,
     impressions: 5009,
+    image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',
+    
   },
   {
     id: 't2',
@@ -39,10 +46,11 @@ const tweets = [
       name: 'sahrukh Singh',
       username: 'babu ke papa',
       image:
-        '',
+        'https://cdn.gadgets360.com/content/assets/entertainment/shah-rukh-khan-poster.jpg',
     },
     content: 'Beto ko drug se dur rakhe',
-    image: 'https://images.bhaskarassets.com/web2images/521/2021/06/08/shah-rukh-khan6_1623161718.jpg',
+    image:
+         'https://cdn.gadgets360.com/content/assets/entertainment/shah-rukh-khan-poster.jpg',
     numberOfComments: 100,
     numberOfRetweets: 200,
     numberOfLikes: 10,
@@ -64,6 +72,9 @@ const tweets = [
     numberOfRetweets: 100,
     numberOfLikes: 500,
     impressions: 100,
+    image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',
+    
   },
   {
     id: 't4',
@@ -76,12 +87,13 @@ const tweets = [
     },
     createdAt: '2024-08-27T12:00:00.000Z',
     content:
-      "My Favourite<3",
+      "My Favourite leone <3",
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReUMkXF4kGrqHjlNSWNpXml7jZ5mPLcTiqxg&s',
     numberOfComments: 123,
     numberOfRetweets: 11,
     numberOfLikes: 10,
+    impressions: 50090,
   },
   {
     id: 't5',
@@ -98,6 +110,10 @@ const tweets = [
     numberOfComments: 48,
     numberOfRetweets: 191,
     numberOfLikes: 9999,
+    impressions: 5002,
+    image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',
+    
   },
   {
     id: 't6',
@@ -113,6 +129,10 @@ const tweets = [
     numberOfComments: 44,
     numberOfRetweets: 1,
     numberOfLikes: 92,
+    impressions: 509,
+    image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',
+    
   },
   {
     id: 't7',
@@ -129,6 +149,10 @@ const tweets = [
     numberOfComments: 42,
     numberOfRetweets: 110,
     numberOfLikes: 9,
+    impressions: 500,
+    image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QRGPv825l4JFxdukQlW3niYUfux2uhYsIQ&s',
+    
   },
 ];
 
