@@ -1,16 +1,21 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 import { Entypo } from '@expo/vector-icons';
 import IconButtons from '@/components/IconButton';
+import { Link } from 'expo-router';
 
 export default function Twitter(props) {
     const tweet = props.tweet
     return (
+      
+        
         <View style={styles.Container}>
+            {/* <Link href={'/tweeter'}> open</Link> */}
             <Image src={tweet.user.image} style={styles.Imagecontainer} />
             <View style={styles.datacontainer}>
-                <View style={{flexDirection:"row",}}>
+            <Link href={'/tweeter'} asChild>
+                <Pressable style={{flexDirection:"row",}}>
                     <Text style={{ fontWeight: "bold", color: "black" }}>{tweet.user.name}</Text>
                     <Text style={{  color: "grey" }}>  {  tweet.user.username}   .2h</Text>
                     <Entypo 
@@ -18,7 +23,8 @@ export default function Twitter(props) {
                      size={18} 
                      color="grey" 
                      style={{marginLeft:"auto"}} />
-                </View>
+                </Pressable>
+                </Link>
                 <Text>{tweet.content}</Text>
                 {tweet.image && <Image src={tweet.image} style={styles.contentIage} />}
                 <View style={styles.containerFooter}>
@@ -30,7 +36,10 @@ export default function Twitter(props) {
                 </View>
             </View>
         </View>
-    )
+       
+       
+
+)
 }
 
 const styles = StyleSheet.create({
@@ -55,7 +64,7 @@ const styles = StyleSheet.create({
     },
     contentIage: {
         width: "100%",
-        aspectRatio: 16 /12,
+        aspectRatio: 17 /10,
         margin: 10,
         borderRadius: 15,
 
