@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function tweeter() {
+export default function tweeterr() {
   return (
     <View>
       <Text>jai ho </Text>

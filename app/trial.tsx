@@ -14,7 +14,7 @@ export default function Twitter(props) {
             {/* <Link href={'/tweeter'}> open</Link> */}
             <Image src={tweet.user.image} style={styles.Imagecontainer} />
             <View style={styles.datacontainer}>
-            <Link href={'/tweeter'} asChild>
+            <Link href={'/AllTabs/tweeter'} asChild>
                 <Pressable style={{flexDirection:"row",}}>
                     <Text style={{ fontWeight: "bold", color: "black" }}>{tweet.user.name}</Text>
                     <Text style={{  color: "grey" }}>  {  tweet.user.username}   .2h</Text>

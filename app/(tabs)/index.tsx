@@ -1,11 +1,12 @@
 import { Image, StyleSheet,FlatList, Platform,SafeAreaView } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
+// import { HelloWave } from '@/components/HelloWave';
+// import ParallaxScrollView from '@/components/ParallaxScrollView';
+// import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { View } from 'react-native-reanimated/lib/typescript/Animated';
+//import { View } from 'react-native-reanimated/lib/typescript/Animated';
 import tweets from '@/assets/data/tweets';
+// import twitterr from '../tweeter';
 import Twitter from '../trial';
 export default function HomeScreen() {
 
