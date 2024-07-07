@@ -1,4 +1,4 @@
-import { Image, StyleSheet,FlatList, Platform,SafeAreaView } from 'react-native';
+import { View,Image, StyleSheet,FlatList, Platform,SafeAreaView,Text } from 'react-native';
 
 // import { HelloWave } from '@/components/HelloWave';
 // import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -8,18 +8,22 @@ import { ThemedView } from '@/components/ThemedView';
 import tweets from '@/assets/data/tweets';
 // import twitterr from '../tweeter';
 import Twitter from '../trial';
+//import { View } from 'react-native-reanimated/lib/typescript/Animated';
 export default function HomeScreen() {
 
   //const tweet= tweets[1]
   return (
+    <><View>
+    <Text style={{padding:10, color:"blue",fontSize:28,fontWeight:"bold"}}>Twiterr</Text>
+    </View>
+    
     
     <ThemedView style={styles.Container}>
-     <FlatList 
-        data={tweets}
-        renderItem={({item}) => <Twitter tweet={item} />}
-        keyExtractor={(item) => item.id.toString()}
-      />
-    </ThemedView>
+        <FlatList
+          data={tweets}
+          renderItem={({ item }) => <Twitter tweet={item} />}
+          keyExtractor={(item) => item.id.toString()} />
+      </ThemedView></>
     
   );
 }
