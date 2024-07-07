@@ -7,9 +7,13 @@ export default function tweeterr() {
   const {tweeter}=useLocalSearchParams();
   console.log(tweeter);
   
+  const tweet= tweets.find((t)=>t.id===tweeter)
+  if(!tweet){
+    return<Text>Tweet {tweeter} not found </Text>
+  }
   return (
     
-    <Twitter tweet={tweets[5]} />
+    <Twitter tweet={tweet} />
   )
 }
 

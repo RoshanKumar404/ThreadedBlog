@@ -10,7 +10,7 @@ import tweets from '@/assets/data/tweets';
 import Twitter from '../trial';
 export default function HomeScreen() {
 
-  const tweet= tweets[1]
+  //const tweet= tweets[1]
   return (
     
     <ThemedView style={styles.Container}>
