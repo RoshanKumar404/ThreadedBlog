@@ -7,14 +7,15 @@ import { ThemedView } from '@/components/ThemedView';
 //import { View } from 'react-native-reanimated/lib/typescript/Animated';
 import tweets from '@/assets/data/tweets';
 // import twitterr from '../tweeter';
-import Twitter from '../trial';
+import Twitter from '../MainTweetPage';
 //import { View } from 'react-native-reanimated/lib/typescript/Animated';
 export default function HomeScreen() {
 
   //const tweet= tweets[1]
   return (
-    <><View>
-    <Text style={{padding:10, color:"blue",fontSize:28,fontWeight:"bold"}}>Twiterr</Text>
+    <SafeAreaView style={styles.safeArea}>
+    <View>
+    <Text style={{padding:10, color:"#00bdfd",fontSize:28,fontWeight:"bold"}}>Twiterr</Text>
     </View>
     
     
@@ -23,7 +24,8 @@ export default function HomeScreen() {
           data={tweets}
           renderItem={({ item }) => <Twitter tweet={item} />}
           keyExtractor={(item) => item.id.toString()} />
-      </ThemedView></>
+      </ThemedView>
+      </SafeAreaView>
     
   );
 }
@@ -46,5 +48,9 @@ const styles = StyleSheet.create({
   },
   Imagecontainer:{
     width:80,height:80,borderRadius:45
-  }
+  }, safeArea: {
+    flex: 1,
+    backgroundColor: '#fff',
+    marginTop:25
+  },
 });
