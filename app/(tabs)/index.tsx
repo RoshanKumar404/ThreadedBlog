@@ -1,56 +1,64 @@
-import { View,Image, StyleSheet,FlatList, Platform,SafeAreaView,Text } from 'react-native';
-
-// import { HelloWave } from '@/components/HelloWave';
-// import ParallaxScrollView from '@/components/ParallaxScrollView';
-// import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-//import { View } from 'react-native-reanimated/lib/typescript/Animated';
+import { View, StyleSheet, FlatList, SafeAreaView, Text, Pressable ,Platform} from 'react-native';
+import React from 'react';
+import { Entypo } from '@expo/vector-icons';
 import tweets from '@/assets/data/tweets';
-// import twitterr from '../tweeter';
 import Twitter from '../MainTweetPage';
-//import { View } from 'react-native-reanimated/lib/typescript/Animated';
-export default function HomeScreen() {
+import { Link } from 'expo-router';
 
-  //const tweet= tweets[1]
+export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
-    <View>
-    <Text style={{padding:10, color:"#00bdfd",fontSize:28,fontWeight:"bold"}}>Twiterr</Text>
-    </View>
-    
-    
-    <ThemedView style={styles.Container}>
+      <View>
+        <Text style={styles.headerText}>Twitter</Text>
+      </View>
+      
+      <View style={styles.container}>
         <FlatList
           data={tweets}
           renderItem={({ item }) => <Twitter tweet={item} />}
-          keyExtractor={(item) => item.id.toString()} />
-      </ThemedView>
-      </SafeAreaView>
-    
+          keyExtractor={(item) => item.id.toString()} 
+        />
+        <Pressable style={styles.plusButton}>
+          <Link href={"/NewTweet"}  asChild>
+          <Entypo name='plus' size={30} color="#efefef"/>
+          </Link>
+        </Pressable>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  Container: {
-    // flex: 1,
-    // alignItems: 'center',
-    // justifyContent:"center",
-    flexDirection:"row",
-    padding:12,
-    borderBottomWidth:1,
-    borderColor:"gray"
-  },
-  datacontainer:{
-    flex: 1,
-    alignItems:'flex-start',
-    justifyContent:"center",
-    marginLeft:10
-  },
-  Imagecontainer:{
-    width:80,height:80,borderRadius:45
-  }, safeArea: {
+  safeArea: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop:25
+    marginTop: Platform.OS === 'android' ? 25 : 0,  // Adding margin only for Android
+  },
+  headerText: {
+    padding: 10,
+    color: '#00bdfd',
+    fontSize: 28,
+    fontWeight: 'bold',
+  },
+  container: {
+    flex: 1,
+    borderBottomWidth: 1,
+    borderColor: 'gray',
+  },
+  plusButton: {
+    backgroundColor: '#00bfff',
+    height: 60,
+    width: 60,
+    borderRadius: 30,
+    position: 'absolute',
+    right: 35,
+    bottom: 75,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#181818',
+    shadowOffset: { width: 0, height: 11 },
+    shadowOpacity: 0.23,
+    shadowRadius: 11.78,
+    elevation: 15,
   },
 });

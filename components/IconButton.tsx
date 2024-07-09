@@ -17,7 +17,7 @@ const IconButtons=({icon,text}: IconButtonsProps)=>{
         // <Entypo name="heart-outlined" size={16} color="grey" />
         // </>
 <View>
-    <EvilIcons name={icon} size={18} color="grey" />
+    <EvilIcons name={icon} size={20} color="grey" />
     <Text style={{fontSize:14,color:"grey"}}>{text}</Text>
 </View>
         
