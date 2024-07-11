@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View, Image, TextInput, Pressable } from 'react-native';
-import React from 'react';
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, TextInput, Pressable, SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import { Link, useNavigation } from 'expo-router';
 
 export default function NewTweet() {
+  const [newTweets, setNewTweets]=useState('')
   const newTweet = {
     id: 't4',
     user: {
@@ -20,15 +21,24 @@ export default function NewTweet() {
     share: 160,
     impressions: 50090,
   };
+  const PostTheTweet=()=>{
+    setNewTweets(newTweets)
+    setNewTweets('')
+    
+console.warn("your tweet has been posted",newTweets);
+
+NavgateToMainScreen.goBack()
+  }
+  const NavgateToMainScreen=useNavigation();
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.tweetButtons}>  
-            <Pressable style={{padding:5,borderRadius:15,backgroundColor:"#00bdfd"}}>
+            <Pressable style={{padding:5,borderRadius:15,backgroundColor:"#f2f2f2",borderWidth:2}}>
           <Link href={"../"}>Cancel</Link>
            </Pressable>
-         <Pressable style={{padding:8,borderRadius:15,backgroundColor:"#00bdfd"}}>
-        <Link href={"../"}>Tweet</Link>
+         <Pressable style={{padding:8,borderRadius:15,backgroundColor:"#00bdfd"}} onPress={PostTheTweet}>
+        <Text style={{fontWeight:"bold",color:'#ffffff'}}>Tweet</Text>
          </Pressable>
       </View>
 
@@ -37,20 +47,23 @@ export default function NewTweet() {
         <Text>New Tweet</Text>
       </View>
       <TextInput
+      value={newTweets}
+      onChangeText={(text)=>setNewTweets(text)}
         placeholder="What's happening?"
         multiline
-        numberOfLines={7}
+         numberOfLines={7}
         style={styles.textInput}
-        maxLength={100}
+        maxLength={300}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingTop: 50,
+    padding:18
   },
   inputContainer: {
     flexDirection: 'row',
@@ -76,6 +89,6 @@ const styles = StyleSheet.create({
     //flex:1,
     flexDirection:"row",
     justifyContent:"space-between",
-    margin:10
+    margin:10,
   }
 });
