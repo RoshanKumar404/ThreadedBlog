@@ -32,6 +32,7 @@ export default function RootLayout() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
         <Stack.Screen name="AllTabs/[tweeter]" options={{ title:'Tweet'}} />
+        <Stack.Screen name="NewTweet" options={{ title:'NewPost'}} />
       </Stack>
     </ThemeProvider>
   );
