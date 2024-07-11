@@ -41,6 +41,7 @@ export default function NewTweet() {
         multiline
         numberOfLines={7}
         style={styles.textInput}
+        maxLength={100}
       />
     </View>
   );
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   textInput: {
-    flex: 1,
+    // flex: 1,
     borderColor: '#ccc',
     borderWidth: 1,
     borderRadius: 10,
@@ -74,6 +75,7 @@ const styles = StyleSheet.create({
   tweetButtons:{
     //flex:1,
     flexDirection:"row",
-    justifyContent:"space-between"
+    justifyContent:"space-between",
+    margin:10
   }
 });
